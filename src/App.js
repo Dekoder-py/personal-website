@@ -12,6 +12,8 @@ function App() {
         I'm a 15 year old programmer based in New Zealand.
           <br/>
         I mostly code in python, and I'm currently learning pygame and Java.
+          <br />
+        I recently participated in the Hack Club Summer of Making 2025.
         </p>
       </header>
       <div className="scroll-indicator">
