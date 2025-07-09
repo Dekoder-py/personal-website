@@ -3,6 +3,7 @@ import { useEffect, useRef } from 'react';
 
 function App() {
   const projectsRef = useRef(null);
+  const skillsRef = useRef(null);
 
   const scrollToContent = () => {
     const contentSection = document.querySelector('.App-body');
@@ -15,7 +16,7 @@ function App() {
   };
 
   useEffect(() => {
-    const observer = new IntersectionObserver(
+    const projectObserver = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
           if (entry.isIntersecting) {
@@ -26,14 +27,32 @@ function App() {
               }, index * 150); // Stagger animation by 150ms
             });
             // Disconnect after animating to prevent re-triggering
-            observer.unobserve(entry.target);
+            projectObserver.unobserve(entry.target);
           }
         });
       },
       { threshold: 0.1 } // Trigger when 10% of the section is visible
     );
 
-    // Also check if the element is already in view when component mounts
+    const skillsObserver = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            const skillItems = entry.target.querySelectorAll('.skill');
+            skillItems.forEach((skill, index) => {
+              setTimeout(() => {
+                skill.classList.add('skill-animate-in');
+              }, index * 100); // Stagger animation by 100ms
+            });
+            // Disconnect after animating to prevent re-triggering
+            skillsObserver.unobserve(entry.target);
+          }
+        });
+      },
+      { threshold: 0.1 }
+    );
+
+    // Check if elements are already in view when component mounts
     const checkIfInView = () => {
       if (projectsRef.current) {
         const rect = projectsRef.current.getBoundingClientRect();
@@ -49,7 +68,25 @@ function App() {
           });
         } else {
           // Otherwise, set up the observer
-          observer.observe(projectsRef.current);
+          projectObserver.observe(projectsRef.current);
+        }
+      }
+
+      if (skillsRef.current) {
+        const rect = skillsRef.current.getBoundingClientRect();
+        const windowHeight = window.innerHeight;
+        
+        // If skills section is already visible, trigger animation immediately
+        if (rect.top < windowHeight && rect.bottom > 0) {
+          const skillItems = skillsRef.current.querySelectorAll('.skill');
+          skillItems.forEach((skill, index) => {
+            setTimeout(() => {
+              skill.classList.add('skill-animate-in');
+            }, index * 100);
+          });
+        } else {
+          // Otherwise, set up the observer
+          skillsObserver.observe(skillsRef.current);
         }
       }
     };
@@ -57,7 +94,10 @@ function App() {
     // Small delay to ensure DOM is ready
     setTimeout(checkIfInView, 100);
 
-    return () => observer.disconnect();
+    return () => {
+      projectObserver.disconnect();
+      skillsObserver.disconnect();
+    };
   }, []);
 
   return (
@@ -124,14 +164,14 @@ function App() {
         </div>
         
         <h2>My Skills</h2>
-        <div className="skills">
-          <span className="skill" style={{'--skill-delay': '0s'}}>Python</span>
-          <span className="skill" style={{'--skill-delay': '0.1s'}}>Pygame</span> 
-          <span className="skill" style={{'--skill-delay': '0.2s'}}>Godot</span> 
-          <span className="skill" style={{'--skill-delay': '0.3s'}}>Java</span>
-          <span className="skill" style={{'--skill-delay': '0.4s'}}>Linux</span>
-          <span className="skill" style={{'--skill-delay': '0.5s'}}>Bash</span>
-          <span className="skill" style={{'--skill-delay': '0.6s'}}>Git</span>
+        <div className="skills" ref={skillsRef}>
+          <span className="skill">Python</span>
+          <span className="skill">Pygame</span> 
+          <span className="skill">Godot</span> 
+          <span className="skill">Java</span>
+          <span className="skill">Linux</span>
+          <span className="skill">Bash</span>
+          <span className="skill">Git</span>
         </div>
       </main>
     </div>
