@@ -1,4 +1,6 @@
-# Getting Started with Create React App
+# personal-website
+
+I made this portfolio with the help of Github Copilot
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
