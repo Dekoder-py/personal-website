@@ -23,6 +23,18 @@ body {
 
 .App {
   min-height: 100vh;
+  animation: pageEnter 0.8s ease-out;
+}
+
+@keyframes pageEnter {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 h1 {
@@ -70,121 +82,7 @@ p {
   align-items: center;
   justify-content: center;
   text-align: center;
-}
-
-.App-body {
-  background-color: var(--base);
-  padding: 4rem 2rem 6rem 2rem;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  text-align: center;
-}
-
-.App-body ul {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-  display: flex;
-  gap: 2rem;
-  flex-wrap: wrap;
-  justify-content: center;
-}
-
-.App-body li {
-  margin: 0;
-}
-
-.App-body a {
-  display: inline-flex;
-  align-items: center;
-  padding: 0.8rem 1.5rem;
-  background: var(--surface);
-  color: var(--accent);
-  text-decoration: none;
-  border-radius: 12px;
-  font-weight: 500;
-  transition: all 0.3s ease;
-  border: 2px solid transparent;
-}
-
-.App-body a:hover {
-  background: var(--accent);
-  color: var(--base);
-  transform: translateY(-2px);
-  box-shadow: 0 8px 25px rgba(137, 180, 250, 0.3);
-}
-
-a {
-  color: var(--accent);
-}
-
-.skills {
-  display: flex;
-  gap: 1rem;
-  flex-wrap: wrap;
-  justify-content: center;
-  margin-top: 1rem;
-}
-
-.skill {
-  padding: 0.6rem 1rem;
-  background: var(--surface);
-  color: var(--text);
-  border-radius: 20px;
-  font-size: 0.9rem;
-  font-weight: 500;
-  border: 1px solid var(--muted);
-  transition: all 0.3s ease;
-}
-
-.skill:hover {
-  background: var(--lavender);
-  color: var(--base);
-  transform: scale(1.05);
-}
-
-.projects {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 1.5rem;
-  margin-top: 1rem;
-  max-width: 900px;
-  width: 100%;
-}
-
-.project {
-  padding: 1.5rem;
-  background: var(--surface);
-  border-radius: 12px;
-  border: 1px solid var(--muted);
-  transition: all 0.3s ease;
-  text-align: left;
-  display: block;
-}
-
-.project:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 8px 25px rgba(137, 180, 250, 0.2);
-  border-color: var(--accent);
-}
-
-.project a {
-  color: var(--accent);
-  font-weight: 600;
-  text-decoration: none;
-  font-size: 1.1rem;
-}
-
-.project a:hover {
-  color: var(--lavender);
-}
-
-.project-description {
-  color: var(--text);
-  margin-top: 0.5rem;
-  font-size: 0.95rem;
-  line-height: 1.5;
+  animation: sectionFadeIn 1s ease-out 0.2s both;
 }
 
 .scroll-indicator {
@@ -193,6 +91,7 @@ a {
   align-items: center;
   padding: 2rem 0;
   background-color: var(--base);
+  animation: sectionFadeIn 1s ease-out 0.6s both;
 }
 
 .scroll-arrow {
@@ -231,4 +130,182 @@ a {
   50% { transform: rotate(4deg); }
   60% { transform: rotate(0deg); }
   100% { transform: rotate(0deg); }
+}
+
+.App-body {
+  background-color: var(--base);
+  padding: 4rem 2rem 6rem 2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.App-body > h2:nth-of-type(1) {
+  animation: sectionFadeIn 1s ease-out 1s both;
+}
+
+.App-body > ul {
+  animation: sectionFadeIn 1s ease-out 1.2s both;
+}
+
+.App-body > h2:nth-of-type(2) {
+  animation: sectionFadeIn 1s ease-out 1.4s both;
+}
+
+.projects {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 1.5rem;
+  margin-top: 1rem;
+  max-width: 900px;
+  width: 100%;
+  animation: sectionFadeIn 1s ease-out 1.6s both;
+}
+
+.App-body > h2:nth-of-type(3) {
+  animation: sectionFadeIn 1s ease-out 1.8s both;
+}
+
+.skills {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-top: 1rem;
+  animation: sectionFadeIn 1s ease-out 2s both;
+}
+
+.skill {
+  padding: 0.6rem 1rem;
+  background: var(--surface);
+  color: var(--text);
+  border-radius: 20px;
+  font-size: 0.9rem;
+  font-weight: 500;
+  border: 1px solid var(--muted);
+  transition: all 0.3s ease;
+  animation: skillPop 0.5s ease-out calc(2.2s + var(--skill-delay, 0s)) both;
+}
+
+@keyframes skillPop {
+  from {
+    opacity: 0;
+    transform: scale(0.8);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.skill:hover {
+  background: var(--lavender);
+  color: var(--base);
+  transform: scale(1.05);
+}
+
+.project {
+  padding: 1.5rem;
+  background: var(--surface);
+  border-radius: 12px;
+  border: 1px solid var(--muted);
+  transition: all 0.3s ease;
+  text-align: left;
+  display: block;
+  opacity: 0;
+  transform: translateY(30px);
+}
+
+.project.animate-in {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.project:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 25px rgba(137, 180, 250, 0.2);
+  border-color: var(--accent);
+}
+
+.project a {
+  color: var(--accent);
+  font-weight: 600;
+  text-decoration: none;
+  font-size: 1.1rem;
+}
+
+.project a:hover {
+  color: var(--lavender);
+}
+
+.project-description {
+  color: var(--text);
+  margin-top: 0.5rem;
+  font-size: 0.95rem;
+  line-height: 1.5;
+}
+
+.project-technologies {
+  margin-top: 0.8rem;
+  display: flex;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+}
+
+.tech-tag {
+  padding: 0.3rem 0.6rem;
+  background: var(--muted);
+  color: var(--base);
+  border-radius: 12px;
+  font-size: 0.7rem;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.App-body ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  gap: 2rem;
+  flex-wrap: wrap;
+  justify-content: center;
+  animation: sectionFadeIn 1s ease-out 1.2s both;
+}
+
+.App-body li {
+  margin: 0;
+}
+
+.App-body a {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.8rem 1.5rem;
+  background: var(--surface);
+  color: var(--accent);
+  text-decoration: none;
+  border-radius: 12px;
+  font-weight: 500;
+  transition: all 0.3s ease;
+  border: 2px solid transparent;
+}
+
+.App-body a:hover {
+  background: var(--accent);
+  color: var(--base);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(137, 180, 250, 0.3);
+}
+
+@keyframes sectionFadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
