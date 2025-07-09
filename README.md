@@ -2,6 +2,8 @@
 
 I made this portfolio with the help of Github Copilot
 
+You can view the site [here](https://dekoder-py.hackclub.app).
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
