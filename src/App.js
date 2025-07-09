@@ -29,15 +29,15 @@ function App() {
         <div className="projects">
           <div className="project">
             <a href="https://pypi.org/project/restless-dungeon/" target="_blank" rel="noopener noreferrer">🐍 Restless Dungeon</a>
-            <div className="project-description">Text-based adventure game built with Python. Explore dungeons, fight monsters, and level up your character!</div>
+            <div className="project-description">Text-based adventure game built with Python.\</div>
           </div>
           <div className="project">
             <a href="https://dekoder-py.itch.io/platform-kingdom" target="_blank" rel="noopener noreferrer">👑 Platform Kingdom</a>
-            <div className="project-description">2D platformer game built in Godot. Jump, run, and collect coins in this fun adventure!</div>
+            <div className="project-description">2D platformer game built in Godot.</div>
           </div>
           <div className="project">
             <a href="https://github.com/Dekoder-py/GuessTheNumber" target="_blank" rel="noopener noreferrer">🎯 Guess The Number</a>
-            <div className="project-description">GUI number guessing game built with Java and JavaFX. Test your luck and logic skills!</div>
+            <div className="project-description">GUI number guessing game built with Java and JavaFX.</div>
           </div>
         </div>
         
