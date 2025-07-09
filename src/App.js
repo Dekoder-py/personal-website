@@ -29,7 +29,7 @@ function App() {
         <div className="projects">
           <div className="project">
             <a href="https://pypi.org/project/restless-dungeon/" target="_blank" rel="noopener noreferrer">🐍 Restless Dungeon</a>
-            <div className="project-description">Text-based adventure game built with Python.\</div>
+            <div className="project-description">Text-based adventure game built with Python.</div>
           </div>
           <div className="project">
             <a href="https://dekoder-py.itch.io/platform-kingdom" target="_blank" rel="noopener noreferrer">👑 Platform Kingdom</a>
