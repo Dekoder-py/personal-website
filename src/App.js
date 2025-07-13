@@ -153,7 +153,7 @@ function App() {
             </div>
           </div>
           <div className="project">
-            <a href="https://github.com/Dekoder-py/PygamePlatformer" target="_blank" rel="noopener noreferrer">🐍 Pygame Platformer</a>
+            <a href="https://github.com/Dekoder-py/PygamePlatformer" target="_blank" rel="noopener noreferrer">🎮 Pygame Platformer</a>
             <div className="project-description">A work in progress 2D platformer written purely in python with pygame-ce. I haven't come up with a name yet!</div>
             <div className="project-technologies">
               <span className="tech-tag">Python</span>
