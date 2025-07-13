@@ -112,7 +112,7 @@ function App() {
           <br/>
         I mostly code in Python, and I'm currently learning Pygame and Java.
           <br />
-        I recently participated in the Hack Club Summer of Making 2025.
+        I am currently participating in the Hack Club Summer of Making 2025.
         </p>
       </header>
       <div className="scroll-indicator">
@@ -153,12 +153,11 @@ function App() {
             </div>
           </div>
           <div className="project">
-            <a href="https://github.com/Dekoder-py/personal-website" target="_blank" rel="noopener noreferrer">🌐 Portfolio Website</a>
-            <div className="project-description">The website you're viewing right now! Built with React and some help from GitHub Copilot for the animations!</div>
+            <a href="https://github.com/Dekoder-py/PygamePlatformer" target="_blank" rel="noopener noreferrer">🐍 Pygame Platformer</a>
+            <div className="project-description">A work in progress 2D platformer written purely in python with pygame-ce. I haven't come up with a name yet!</div>
             <div className="project-technologies">
-              <span className="tech-tag">React</span>
-              <span className="tech-tag">CSS</span>
-              <span className="tech-tag">JavaScript</span>
+              <span className="tech-tag">Python</span>
+              <span className="tech-tag">Pygame</span>
             </div>
           </div>
         </div>
