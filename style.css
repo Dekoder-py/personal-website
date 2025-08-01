@@ -5,12 +5,5 @@
 
 html {
   background-color: var(--background);
-}
-
-h1, h2 {
-  color: var(--text);
-}
-
-p {
   color: var(--text);
 }
