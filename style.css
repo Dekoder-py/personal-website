@@ -7,7 +7,7 @@ html {
   background-color: var(--background);
 }
 
-h1 {
+h1, h2 {
   color: var(--text);
 }
 
