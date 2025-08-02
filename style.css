@@ -1,12 +1,17 @@
 @import url('https://fonts.googleapis.com/css2?family=Work+Sans:ital,wght@0,100..900;1,100..900&display=swap');
 
 :root {
-  --text: #000000;
-  --background: #FFFFFF;
+  --text: #eff1f5;
+  --background: #4c4f69;
+  --accent: #04a5e5;
 }
 
 html {
   background-color: var(--background);
   color: var(--text);
   font-family: "Work Sans", sans;
+}
+
+a {
+  color: var(--accent);
 }
