@@ -1,9 +1,9 @@
 @import url('https://fonts.googleapis.com/css2?family=Work+Sans:ital,wght@0,100..900;1,100..900&display=swap');
 
 :root {
-  --text: #4c4f69;
-  --background: #eff1f5;
-  --accent: #04a5e5;
+  --text: #c6d0f5;
+  --background: #303446;
+  --accent: #8caaee;
 }
 
 html {
